@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mokevia | Smarter technology, stronger financial futures</title>
+<meta name="description" content="Modern cloud core banking for microfinance institutions, SACCOs and digital lenders. Lending, savings and ledger in one secure platform.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: light hero with a dashboard preview, icon-free feature grid, navy security band, teal closing call to action */
+:root{
+  --bg:#f4f9f9; --surface:#ffffff; --ink:#0b2545; --muted:#52627a; --line:#d7e3e6;
+  --teal:#0e9f9a; --teal-ink:#ffffff; --band:#0b2545; --band-ink:#eef4f8; --band-muted:#a9bbd0;
+  --logo-a:#0b2545; --logo-b:#14b8aa; --tint:#e3f4f2;
+  --display:"Manrope","Segoe UI",system-ui,sans-serif; --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#08162b; --surface:#0f2038; --ink:#eaf2f7; --muted:#9db0c6; --line:#1f3452;
+  --teal:#18b8ae; --teal-ink:#06202a; --band:#050e1c; --logo-a:#eaf2f7; --tint:#0f2a3a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#08162b; --surface:#0f2038; --ink:#eaf2f7; --muted:#9db0c6; --line:#1f3452;
+  --teal:#18b8ae; --teal-ink:#06202a; --band:#050e1c; --logo-a:#eaf2f7; --tint:#0f2a3a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+a{color:inherit}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.brand{display:flex;align-items:flex-end;font-family:var(--display);font-weight:800;font-size:26px;line-height:1;letter-spacing:.16em;text-decoration:none;color:var(--ink)}
+.brand svg{display:block;width:100%;height:100%}
+.bm{width:1.63em;height:1.008em;display:block;margin-right:.16em}
+.bt{margin-right:.04em}
+.ba{width:.743em;height:.72em;display:block}
+.logo-a{fill:var(--logo-a)} .logo-b{fill:var(--logo-b)}
+.links{display:flex;gap:26px;align-items:center;font-size:16px}
+.links a{text-decoration:none}
+.btn{display:inline-block;background:var(--teal);color:var(--teal-ink);font-weight:600;padding:13px 24px;border-radius:8px;text-decoration:none;font-size:17px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--teal);padding:11px 20px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:center;padding-block:40px 72px}
+.eyebrow{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:800}
+.hero p{color:var(--muted);font-size:20px;margin:18px 0 12px}
+.hero p.tag{font-family:var(--display);font-weight:800;color:var(--teal);font-size:19px;margin:0 0 28px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.preview{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(11,37,69,.16);overflow:hidden;min-width:0}
+.pv{display:grid;grid-template-columns:104px minmax(0,1fr);min-height:300px;font-size:12px}
+.pv aside{background:var(--band);color:var(--band-muted);padding:14px 10px;display:flex;flex-direction:column;gap:9px}
+.pv aside b{color:var(--band-ink);font-family:var(--display);letter-spacing:.06em;margin-bottom:6px}
+.pv aside span.on{background:rgba(24,184,174,.22);color:var(--band-ink);border-radius:5px;padding:3px 6px}
+.pv aside span{padding:3px 6px}
+.pv main{padding:14px;min-width:0}
+.pv h4{margin:0 0 10px;font-family:var(--display);font-size:15px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.kpi{border:1px solid var(--line);border-radius:8px;padding:8px}
+.kpi small{display:block;color:var(--muted)} .kpi strong{font-family:var(--display);font-size:15px;font-variant-numeric:tabular-nums}
+.chart{border:1px solid var(--line);border-radius:8px;padding:8px}
+.chart svg{display:block;width:100%;height:90px}
+.sample{font-size:12px;color:var(--muted);margin:8px 2px 0;text-align:right}
+.strip{background:var(--surface);border-block:1px solid var(--line)}
+.strip ul{list-style:none;margin:0;padding:18px 0;display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;font-family:var(--display);font-weight:600;font-size:17px}
+section{padding-block:72px}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:12px}
+.lead{color:var(--muted);max-width:640px;margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;min-width:0}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.secure{background:var(--band);color:var(--band-ink)}
+.secure .lead{color:var(--band-muted)}
+.secure .eyebrow{color:#3fd6c8}
+.secure ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 48px}
+.secure li{padding-left:22px;position:relative;min-width:0}
+.secure li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:#3fd6c8}
+.cta{background:linear-gradient(120deg,#0b2545,#0e7f86);color:#fff}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta h2{margin:0 0 6px} .cta p{margin:0;color:#cfe6ea}
+.cta .btn{background:#3fd6c8;color:#06202a}
+.addr{font-family:var(--display);font-weight:800;font-size:22px;word-break:break-all}
+footer{padding-block:28px;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.links .l{display:none}.grid,.secure ul{grid-template-columns:1fr}.pv{grid-template-columns:70px minmax(0,1fr)}.kpis{grid-template-columns:1fr 1fr}.kpi:nth-child(3){display:none}section{padding-block:52px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="#top" aria-label="Mokevia"><span class="bm"><svg viewBox="3.1 3.5 45.8 28.5" aria-hidden="true"><defs><linearGradient id="gx" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#0e9f9a"/></linearGradient><linearGradient id="gy" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#14b8aa"/><stop offset="1" stop-color="#1e5bd8"/></linearGradient><clipPath id="gc"><rect x="0" y="0" width="60" height="32"/></clipPath></defs><g clip-path="url(#gc)" fill="none" stroke-width="9" stroke-linejoin="round"><path d="M8 40 L18 8 L28 40" stroke="url(#gx)"/><path d="M24 40 L34 8 L44 40" stroke="url(#gy)" style="mix-blend-mode:multiply" opacity=".92"/></g></svg></span><span class="bt">OKEVI</span><span class="ba"><svg viewBox="-0.2 0 29.4 28.5" aria-hidden="true"><defs><clipPath id="ac"><rect x="-5" y="0" width="40" height="28.5"/></clipPath></defs><g clip-path="url(#ac)"><path d="M0.55 34 L14.5 3 L28.45 34" fill="none" stroke="currentColor" stroke-width="5.8" stroke-linejoin="miter" stroke-miterlimit="12"/></g></svg></span></a>
+    <div class="links"><a class="l" href="#platform">Platform</a><a class="l" href="#security">Security</a><a class="l" href="#contact">Contact</a><a class="btn ghost" href="https://eu.mokevia.com">Client login</a></div>
+  </nav>
+  <div class="hero" id="top">
+    <div>
+      <div class="eyebrow">Core banking, built for what's next</div>
+      <h1>The smarter core for institutions ready to grow</h1>
+      <p>Modern cloud software for microfinance institutions, SACCOs and digital lenders. Lending, savings and your ledger in one secure platform.</p>
+      <p class="tag">Smarter technology, stronger financial futures.</p>
+      <div class="ctas"><a class="btn" href="#contact">Book a demo</a><a class="btn ghost" href="#platform">Explore the platform</a></div>
+    </div>
+    <div>
+      <div class="preview"><div class="pv">
+        <aside><b>MOKEVIA</b><span class="on">Dashboard</span><span>Products</span><span>Accounts</span><span>Transactions</span><span>Reports</span><span>System</span></aside>
+        <main><h4>Dashboard</h4>
+          <div class="kpis"><div class="kpi"><small>Loan portfolio</small><strong>12,480,000</strong></div><div class="kpi"><small>Savings</small><strong>8,760,000</strong></div><div class="kpi"><small>PAR 30</small><strong>2.8%</strong></div></div>
+          <div class="chart"><svg viewBox="0 0 300 90" preserveAspectRatio="none" aria-label="Portfolio trend, sample"><line x1="0" y1="22" x2="300" y2="22" stroke="var(--line)"/><line x1="0" y1="45" x2="300" y2="45" stroke="var(--line)"/><line x1="0" y1="68" x2="300" y2="68" stroke="var(--line)"/><polyline points="0,78 30,72 60,70 90,60 120,58 150,48 180,50 210,38 240,30 270,24 300,14" fill="none" stroke="var(--teal)" stroke-width="2.5"/><circle cx="300" cy="14" r="4" fill="var(--teal)"/></svg></div>
+        </main></div></div>
+      <p class="sample">Sample data for illustration</p>
+    </div>
+  </div>
+</div>
+
+<div class="strip"><div class="wrap"><ul><li>Lending</li><li>Savings</li><li>Deposits</li><li>Accounting</li><li>Reporting</li></ul></div></div>
+
+<section id="platform"><div class="wrap">
+  <div class="eyebrow">Our platform</div>
+  <h2>Everything your institution needs to move forward</h2>
+  <p class="lead">One system for the daily work of a lender: members, loans, repayments and the books behind them.</p>
+  <div class="grid">
+    <div class="card"><h3>Lending and loan management</h3><p>Products, schedules, repayments and arrears, from application to collection.</p></div>
+    <div class="card"><h3>Savings and deposits</h3><p>Member savings accounts with flexible products you configure yourself.</p></div>
+    <div class="card"><h3>Core accounting and ledgers</h3><p>A true double-entry ledger, so balances reconcile and reports use the same numbers.</p></div>
+    <div class="card"><h3>Reports and insight</h3><p>Portfolio quality and performance reports to help you manage risk.</p></div>
+  </div>
+</div></section>
+
+<section class="secure" id="security"><div class="wrap">
+  <div class="eyebrow">Security and control</div>
+  <h2>Your data. Our priority.</h2>
+  <p class="lead">Money software has to be careful and hard to break into. This is how we run it.</p>
+  <ul>
+    <li>Each institution's data is separated at the database level</li>
+    <li>Role-based access and a full audit trail of sensitive actions</li>
+    <li>Sign-in protected by a bot check and automatic account lock-out, with alerts to our team</li>
+    <li>Data encrypted in transit, with nightly encrypted backups held at two separate providers</li>
+    <li>Restores tested regularly, not just assumed to work</li>
+    <li>Hosted in the UK and EU today, with a Kenyan hosting region planned</li>
+  </ul>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="eyebrow">Private preview</div>
+  <h2>Talk to us</h2>
+  <p class="lead">Mokevia is open to a small number of institutions. Tell us about yours and we will reply personally.</p>
+  <p class="addr">admin@mokevia.com</p>
+</div></section>
+
+<div class="cta"><div class="wrap" style="padding-block:40px"><div><h2>Build a stronger financial future with Mokevia</h2><p>Modern core banking for a more inclusive and resilient financial ecosystem.</p></div><a class="btn" href="#contact">Book a demo</a></div></div>
+
+<footer><div class="wrap"><span>© 2026 Mokevia. All rights reserved.</span><span>Smarter technology, stronger financial futures.</span></div></footer>
+</body>
+</html>
